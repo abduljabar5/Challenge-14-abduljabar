@@ -1,14 +1,15 @@
-<div class="text-center">
-  <h2>{{title}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{comment}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+
+
+<div class="card">
+  <div class="card-header text-center">
+    {{title}}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{comment}} </p>
+      <footer class="blockquote-footer">{{format_date date_created}} <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+     <a href="/" class="card-link">Back</a>
+    <a href="#" class="card-link">Add comment</a>
+  </div>
 </div>

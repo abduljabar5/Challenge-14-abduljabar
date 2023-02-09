@@ -67,10 +67,18 @@ const loginFormHandler = async (event) => {
 //     .addEventListener('submit', loginFormHandler);
 
     const login = document.getElementById('login')
-    login.addEventListener("click", loginFormHandler)
-  
- 
-  const sighup = document.getElementById('sighup');
+    if(login){
+            login.addEventListener("click", loginFormHandler)
+
+    }
+   const sighup = document.getElementById('sighup');
+ if (sighup){
   sighup.addEventListener("click", signupFormHandler) 
-  const logoutbutton = document.querySelector('#logout')
-  logoutbutton.addEventListener('click', logout);
+
+ }
+   const logoutbutton = document.querySelector('#logout')
+
+ if (logoutbutton){
+    logoutbutton.addEventListener('click', logout);
+ }
+  

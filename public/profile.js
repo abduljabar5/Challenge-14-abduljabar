@@ -1,21 +1,21 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
+    const title = document.querySelector('#title').value.trim();
+    const comment = document.querySelector('#comment').value.trim();
   
-    if (name && needed_funding && description) {
-      const response = await fetch(`/api/projects`, {
+    if (title && comment) {
+        console.log( title, comment);
+      const response = await fetch(`/api/profile`, {
         method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
+        body: JSON.stringify({ title, comment }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
       } else {
         alert('Failed to create project');
       }
@@ -23,10 +23,11 @@ const newFormHandler = async (event) => {
   };
   
   const delButtonHandler = async (event) => {
+    console.log("deleged");
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/${id}`, {
+      const response = await fetch(`/api/profile/${id}`, {
         method: 'DELETE',
       });
   
@@ -38,22 +39,25 @@ const newFormHandler = async (event) => {
     }
   };
   
-  document.querySelector('.new-project-form').addEventListener('click', newFormHandler);
+ const submitcomment = document.querySelector('#submitcomment')
+ if(submitcomment){
+     submitcomment.addEventListener('click', newFormHandler);
+ }
   
   document.querySelector('.project-list').addEventListener('click', delButtonHandler);
   
-const logout = async () => {
-    const response = await fetch('/api/users/logout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-    });
+// const logout = async () => {
+//     const response = await fetch('/api/users/logout', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//     });
   
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
-  };
+//     if (response.ok) {
+//       document.location.replace('/');
+//     } else {
+//       alert(response.statusText);
+//     }
+//   };
   
- const logoutbutton = document.querySelector('#logout')
- logoutbutton.addEventListener('click', logout);
+//  document.querySelector('#logout')
+//  .addEventListener('click', logout);
