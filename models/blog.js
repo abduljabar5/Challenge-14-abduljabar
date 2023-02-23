@@ -18,6 +18,9 @@ Blog.init(
         comment:{
             type: DataTypes.STRING,
         },
+        user_comment:{
+            type: DataTypes.STRING,
+        },
         date_created:{
             type: DataTypes.DATE,
             allowNull: false,

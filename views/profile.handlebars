@@ -6,7 +6,7 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Post:</h3>
 
    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Title</label>
@@ -22,7 +22,7 @@
 
 
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+    <h3>Current Posts:</h3>
 
     {{#each blogs as |blog|}}
     <div class="row mb-2">
@@ -31,7 +31,8 @@
       <div>{{blog.comment}}</div>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger project-list"  data-id="{{blog.id}}">DELETE</button>
+        <a role="button" class="btn btn-sm btn-primary project-list" href="/blogupdate/{{blog.id}}">Update</a>
+        <button class="btn btn-sm btn-danger project-list"   data-id="{{blog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}

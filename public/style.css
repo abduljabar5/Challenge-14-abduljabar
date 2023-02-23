@@ -37,3 +37,10 @@ a:link {
     justify-content: center;
     align-items: center;
   }
+  .deletebtn{
+    display: none;
+  }
+  .deletebtn:hover{
+    display: block;
+
+  }

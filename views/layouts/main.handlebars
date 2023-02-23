@@ -8,7 +8,6 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
     <header>
         <nav>
@@ -17,25 +16,14 @@
                 <li class="dash"><a href="/profile">Dashboard</a></li>
                 {{#if logged_in}}
                 <li ><a role="button" id="logout">Logout</a></li>
-
                 {{else}}
                 <li class="logout"><a href="/login">Login</a></li>
-
                 {{/if}}
-                
-                
             </ul>
         </nav>
-    
-  
     <h1>
       Tech Blog
     </h1>
-  
-    {{!-- <nav>
-      <button class="btn btn-warning" id="logout">logout</button>
-    </nav> --}}
-  
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
@@ -48,5 +36,5 @@
   <script src="/logout.js"></script>
   {{/if}}
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>
