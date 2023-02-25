@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Blog} = require('../../models');
+const {Blog, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -14,7 +14,30 @@ router.post('/', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
+router.post('/comment', async (req, res) => {
+    try{
+        const newComment = await Comment. create({
+            ...req.body,
+            user_id: req.session.user_id,
+        });
+        console.log(newComment);
+        res.status(200).json(newComment);
+    }catch (err){
+        res.status(400).json(err);
+    }
+});
+router.get ('/comment', async (req, res) => {
+    try{
+        const CommentData = await Comment.findAll()
+        const comment = CommentData.map((comment) => comment.get({ plain: true }));
 
+        // Pass serialized data and session flag into template
+        res.status(200).json(comment);
+
+     } catch (err) {
+        res.status(500).json(err);
+      }
+});
 router.delete('/:id', withAuth, async(req, res) => {
     try{
         const blogData = await Blog.destroy({

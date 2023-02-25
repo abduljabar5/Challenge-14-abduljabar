@@ -16,12 +16,13 @@
   </div>
 </div>
 {{!-- comments --}}
-
+ {{#each comments as |comment|}}
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    {{user_comment}}
+    {{comment.user_comment}}
   </div>
 </div>
+{{/each}}
 
 <!-- new comment form -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -36,7 +37,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="commentsubbtn">Understood</button>
+        <button type="button" class="btn btn-primary" data-id="{{id}}" id="commentsubbtn">Understood</button>
       </div>
     </div>
   </div>

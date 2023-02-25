@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { json } = require('body-parser');
 const { title } = require('process');
-const {Blog , User} = require('../models');
+const {Blog , User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -26,14 +26,13 @@ router.get('/blog/:id', async (req, res) => {
       const blogData = await Blog.findByPk(req.params.id, {
         include: [
           {
-            model: User,
-            attributes: ['email'],
+            model: Comment
           },
         ],
       });
   console.log(User);
       const blog = blogData.get({ plain: true });
-  
+      // res.status(200).json(blog);
       res.render('blog', {
         ...blog,
         logged_in: req.session.logged_in
