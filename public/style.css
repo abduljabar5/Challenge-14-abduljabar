@@ -155,3 +155,6 @@ a:link {
   a :hover{
     opacity: 1;
   }
+  #staticBackdrop{
+    margin-bottom: 10px;
+  }
