@@ -31,13 +31,13 @@ Blog.init(
               key: 'id',
             },
           },
-        //   comment_id: {
+        //   user_comment:{
         //     type: DataTypes.INTEGER,
         //     references: {
-        //       model: 'comment',
-        //       key: 'id',
-        //     },
-        //   },
+        //         model: 'comment',
+        //         key: 'id'
+        //     }
+        // }
     },
 
     {

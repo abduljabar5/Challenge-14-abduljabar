@@ -20,7 +20,7 @@ console.log(user_comment, blog_id);
       });
     
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace(`/blog/${blog_id}`);
       } else {
         alert('Failed to create project');
       }

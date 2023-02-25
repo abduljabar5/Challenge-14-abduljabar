@@ -1,18 +1,20 @@
 
 
   {{!-- {{#if blog.length}} --}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 project-list " id="homepagecard">
     <h3>Current Projects:</h3>
 
     {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+    <div class="row mx-auto" style="background-color: #212529; border-radius:20px">
+      <div class="col mx-auto text-center">
         <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
-      <div>{{blog.comment}}</div>
+        <cite><small class="text-light" style="float: right;"> {{blog.user.username}} </small></cite>
+        <hr>
+      <div class="text-light text-center">{{blog.comment}}</div>
+      <cite><small class="text-light" style="float: right;"> {{format_date blog.date_created}} </small></cite>
       </div>
     </div>
     {{/each}}
-
 
 
 <script src="/profile.js"></script>

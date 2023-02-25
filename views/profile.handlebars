@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome!</h2>
+    <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
 
@@ -21,21 +21,39 @@
   </div>
 
 
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 project-list" style="overflow: auto; height: 500px">
     <h3>Current Posts:</h3>
 
     {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+    <div class="apple">
+  <div class="btns">
+    <div class="circle">
+      <a role="button" class="red box"data-id="{{blog.id}}"><span class="x" data-id="{{blog.id}}">x</span></a>
+    </div>
+    <div class="circle">
+      <span class="yellow box"></span>
+    </div>
+    <div class="circle">
+      <span class="green box"></span>
+    </div>
+  </div>
+  <div class="card__content">
+
+     <div class="row mb-2">
+      <div class="col-md-8 my-3">
         <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
-      <div>{{blog.comment}}</div>
+      <div class="text-light ">{{blog.comment}}</div>
       </div>
       <div class="col-md-4">
-        <a role="button" class="btn btn-sm btn-primary project-list" href="/blogupdate/{{blog.id}}">Update</a>
-        <button class="btn btn-sm btn-danger project-list"   data-id="{{blog.id}}">DELETE</button>
+        <a role="button" class="btn btn-sm btn-primary project-list" href="/blogupdate/{{blog.id}}">Edit</a>
+        <button class="btn btn-sm btn-danger project-list" id="presonaldltbtn"  data-id="{{blog.id}}">DELETE</button>
       </div>
     </div>
+
+  </div>
+</div>
     {{/each}}
- 
+
+
 
 <script src="/profile.js"></script>

@@ -1,26 +1,31 @@
 
 
 <div class="card">
-  <div class="card-header text-center">
+  <h2 class="card-header text-center">
     {{title}}
-  </div>
+  </h2>
   <div class="card-body">
     <blockquote class="blockquote mb-0">
       <p>{{comment}} </p>
-      <footer class="blockquote-footer"> {{email}} {{format_date date_created}} <cite id="id"> {{id}} </cite></footer>
+      <footer class="blockquote-footer"> {{user.username}} {{format_date date_created}} </footer>
 
     </blockquote>
      <a href="/" class="card-link text-dark">Back</a>
+     {{#if comments}}
       <a href="#collapseExample" data-bs-toggle="collapse" class="card-link text-dark">View Comments</a>
+      {{/if}}
+      {{#if logged_in}}
     <a href="#staticBackdrop" data-bs-toggle="modal" class="card-link text-dark">Add comment</a>
+    {{/if}}
   </div>
 </div>
 {{!-- comments --}}
  {{#each comments as |comment|}}
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    {{comment.user_comment}}
+    {{comment.user_comment}} <small> <strong  class="blockquote-footer">{{comment.user.username}}</strong>  {{format_date comment.date_created}}</small>
   </div>
+  <div class="blockquote-footer"> {{format_date comment.date_created}} hi </div>
 </div>
 {{/each}}
 
