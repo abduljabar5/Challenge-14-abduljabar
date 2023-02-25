@@ -18,7 +18,8 @@ https://powerful-sierra-44934.herokuapp.com/
 
 CMS-style blog site, similar to a Wordpress site, that enables developers to publish their blog posts and comment on other developers' posts.
 
-![Alt text](assets/img/portfolio.png)
+<img width="1440" alt="Screenshot 2023-02-25 at 1 25 19 PM" src="https://user-images.githubusercontent.com/115905200/221375909-0dd1889c-3428-4aec-baaf-1fda9d6653fb.png">
+
 
 ## Credits
 google.com
